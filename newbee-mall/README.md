@@ -49,3 +49,12 @@ Dependencies：表示将要初始化的 Spring Boot 项目所需的依赖和 sta
 ## MVC 自动配置内容
 
 文档地址为 [https://docs.spring.io/spring-boot/docs/2.3.7.RELEASE/reference/htmlsingle/#boot-features-spring-mvc-auto-configuration]
+
+## MyBatis ![Mybatis.png](Mybatis.png)
+
+封装了 JDBC 大部分操作，减少开发人员工作量；
+相比一些自动化的 ORM 框架，“半自动化”使得开发人员可以自由的编写 SQL 语句，灵活度更高；
+Java 代码与 SQL 语句分离，降低维护难度；
+自动映射结果集，减少重复的编码工作；
+开源社区十分活跃，文档齐全，学习成本不高。
+
