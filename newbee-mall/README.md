@@ -45,3 +45,7 @@ Package name：表示项目包名。
 Packaging：表示项目的打包方式，有两种选择：Jar 和 War，在 Spring Boot 项目初始化时，如果选用的方式不同，那么导入的打包插件也有区别。
 Java：表示 JDK 版本的选择，有 15、11 和 8 三个版本供开发者选择。
 Dependencies：表示将要初始化的 Spring Boot 项目所需的依赖和 starter，如果不选择的话默认生成的项目中仅有核心模块 spring-boot-starter 和测试模块 spring-boot-starter-test。在这个配置项中可以设置项目中所需的 starter，比如 Web 开发所需的依赖，数据库开发所需的依赖等等。
+
+## MVC 自动配置内容
+
+文档地址为 [https://docs.spring.io/spring-boot/docs/2.3.7.RELEASE/reference/htmlsingle/#boot-features-spring-mvc-auto-configuration]

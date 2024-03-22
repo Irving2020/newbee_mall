@@ -13,9 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author 十三
- * @qq交流群 796794009
- * @email 2449207463@qq.com
  * @link https://github.com/newbee-ltd
  */
 @Controller
