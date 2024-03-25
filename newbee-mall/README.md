@@ -58,3 +58,18 @@ Java 代码与 SQL 语句分离，降低维护难度；
 自动映射结果集，减少重复的编码工作；
 开源社区十分活跃，文档齐全，学习成本不高。
 
+建表示例：
+DROP TABLE IF EXISTS `tb_user`;
+
+CREATE TABLE `tb_user` (
+`id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+`name` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '登录名',
+`password` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '密码',
+PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+/*Data for the table `jdbc_test` */
+
+insert  into `tb_user`(`id`,`name`,`password`) values (1,'Spring Boot','123456'),(2,'MyBatis','123456'),(3,'Thymeleaf','123456'),(4,'Java','123456'),(5,'MySQL','123456'),(6,'IDEA','123456');
+
+![img.png](img.png)
