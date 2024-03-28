@@ -73,3 +73,38 @@ PRIMARY KEY (`id`)
 insert  into `tb_user`(`id`,`name`,`password`) values (1,'Spring Boot','123456'),(2,'MyBatis','123456'),(3,'Thymeleaf','123456'),(4,'Java','123456'),(5,'MySQL','123456'),(6,'IDEA','123456');
 
 ![img.png](img.png)
+
+
+## Lombok
+
+Lombok 项目是一个第三方的 Java 工具库，它会自动插入编辑器和构建工具中，Lombok提供了一组非常有用的注释，用来消除Java类中的大量样板代码，比如 setter getter 方法、构造方法等等，仅仅在原来的 JavaBean 类上使用 @Data 注解就可以替换数百行代码从而使代码变得更加清爽、简洁且易于维护。
+
+Spring Boot 整合 Lombok:
+
+`
+<dependency>
+<groupId>org.projectlombok</groupId>
+<artifactId>lombok</artifactId>
+<version>1.18.8</version>
+<scope>provided</scope>
+</dependency>
+`
+
+安装lombok插件
+
+@Data 注解是一个比较霸道的注解，它不仅能够生成 POJO 类所有属性的 get() 和 set() 方法，此外还提供了equals、canEqual、hashCode、toString 方法。
+
+如果你不想要生成这么多内容，也可以使用其它的注解来实现你的需求：
+
+@Setter 注解在属性上，为属性提供 setting 方法
+@Getter 注解在属性上，为属性提供 getting 方法
+@Log4j 注解在类上，为类提供一个 属性名为log 的 log4j 日志对象
+@NoArgsConstructor 注解在类上，为类提供一个无参的构造方法
+@AllArgsConstructor 注解在类上，为类提供一个全参的构造方法
+@Builder 被注解的类加个构造者模式
+@Synchronized 加同步锁
+@NonNull 如果给参数加个这个注解 参数为null会抛出空指针异常
+@Value 注解和 @Data 类似，区别在于它会把所有成员变量默认定义为 private final 修饰，并且不会生成set方法。
+
+
+
