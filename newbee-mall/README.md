@@ -1,110 +1,195 @@
-## 使用 Spring Initializr 初始化一个 Spring Boot 项目
+![](static-files/newbee-mall.png)
 
-Spring Initializr 页面中的配置项需要开发者逐一进行设置，过程非常简单，根据项目情况依次填写即可。
+![Build Status](https://img.shields.io/badge/build-passing-green.svg)
+![Version 2.0.0](https://img.shields.io/badge/version-2.0.0-yellow.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/newbee-ltd/newbee-mall-api/blob/master/LICENSE)
 
-本次演示中，开发语言选择 Java，Project 项目类型选项中勾选 Maven Project，因为本地安装的项目管理工具是 Maven。Spring Boot 版本选择为 2.3.7，当然也可以选择其他稳定版本，根据实际开发的情况去选择即可，即使这里已经选择一个版本号，在初始化成功后也能够在项目中的 pom.xml 文件或者 build.gradle 文件中修改 Spring Boot 版本号。
+newbee-mall 项目是一套电商系统，基于 Spring Boot 和 Vue 以及相关技术栈开发。前台商城系统包含首页门户、商品分类、新品上线、首页轮播、商品推荐、商品搜索、商品展示、购物车、订单结算、订单流程、个人订单管理、会员中心、帮助中心等模块。 后台管理系统包含数据面板、轮播图管理、商品管理、订单管理、会员管理、分类管理、设置等模块。
 
-项目基础信息中，Group 输入框中填写“ltd.newbee.mall”，Artifact 输入框中填写“newbee-mall”，Name 输入框中填写“newbee-mall”，Description 输入框中填写“NEWBEE商城”，Package name 输入框中填写“ltd.newbee.mall”，Packaging 打包方式选择 Jar，JDK 版本选择 8。
+当前分支的 Spring Boot 版本为 2.7.5，想要学习和使用其它版本可以直接点击下方的分支名称跳转至对应的仓库分支中。
 
-由于即将开发的是一个 Web 项目，因此需要添加 web-starter 依赖，点击 Dependencies 右侧的“ADD DEPENDENCIES”按钮，在弹出的弹框中输入关键字“web”并选择“Spring Web：Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.”选项。
+| 分支名称                                                    | Spring Boot Version |
+| ------------------------------------------------------------ | ------------------- |
+| [spring-boot-2.3.7](https://github.com/newbee-ltd/newbee-mall-api/tree/spring-boot-2.3.7) | 2.3.7-RELEASE       |
+| [spring-boot-2.6.x](https://github.com/newbee-ltd/newbee-mall-api/tree/spring-boot-2.6.x) | 2.6.3               |
+| [main](https://github.com/newbee-ltd/nnewbee-mall-api)            | 2.7.5               |
+| [spring-boot-3.x](https://github.com/newbee-ltd/newbee-mall-api/tree/spring-boot-3.x) | 3.1.0               |
 
-## Maven插件启动
-项目初始化时，配置项中选择的项目类型为 Maven Project，pom.xml 文件中会默认引入 spring-boot-maven-plugin 插件依赖，因此可以直接使用 Maven 命令来启动 Spring Boot 项目，插件配置如下：
+**坚持不易，如果觉得项目还不错的话可以给项目一个 Star 吧，也是对我一直更新代码的一种鼓励啦，谢谢各位的支持。**
 
-[//]: # (<build>)
+![newbee-mall-info](https://newbee-mall.oss-cn-beijing.aliyuncs.com/poster/store/newbee-mall-star.png)
 
-[//]: # (    <plugins>)
+## newbee-mall （新蜂商城）系列项目概览
 
-[//]: # (        <plugin>)
+![newbee-mall-course-2022](https://github.com/newbee-ltd/newbee-mall-cloud/raw/main/static-files/newbee-mall-course-2023.png)
 
-[//]: # (            <groupId>org.springframework.boot</groupId>)
+| 项目名称             | 仓库地址                                                     | 备注                                                         |
+| :------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| newbee-mall          | [newbee-mall in GitHub](https://github.com/newbee-ltd/newbee-mall)<br>[newbee-mall in Gitee](https://gitee.com/newbee-ltd/newbee-mall) | 初始版本、Spring Boot、Thymeleaf、MyBatis、MySQL             |
+| newbee-mall-plus     | [newbee-mall-plus in GitHub](https://github.com/newbee-ltd/newbee-mall-plus)<br/>[newbee-mall-plus in Gitee](https://gitee.com/newbee-ltd/newbee-mall-plus) | 升级版本、优惠券、秒杀、支付、Spring Boot、Thymeleaf、MyBatis、MySQL、Redis |
+| newbee-mall-cloud    | [newbee-mall-cloud in GitHub](https://github.com/newbee-ltd/newbee-mall-cloud)<br/>[newbee-mall-cloud in Gitee](https://gitee.com/newbee-ltd/newbee-mall-cloud) | 微服务版本、分布式事务、Spring Cloud Alibaba、Nacos、Sentinel、OpenFeign、Seata |
+| newbee-mall-api      | [newbee-mall-api in GitHub](https://github.com/newbee-ltd/newbee-mall-api)<br/>[newbee-mall-api in Gitee](https://gitee.com/newbee-ltd/newbee-mall-api) | 前后端分离、Spring Boot、MyBatis、Swagger、MySQL             |
+| newbee-mall-api-go   | [newbee-mall-api-go in GitHub](https://github.com/newbee-ltd/newbee-mall-api-go)<br/>[newbee-mall-api-go in Gitee](https://gitee.com/newbee-ltd/newbee-mall-api-go) | 前后端分离、Go、Gin、MySQL                                   |
+| newbee-mall-vue-app  | [newbee-mall-vue-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue-app)<br/>[newbee-mall-vue-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue-app) | 前后端分离、Vue2、Vant                                    |
+| newbee-mall-vue3-app | [newbee-mall-vue3-app in GitHub](https://github.com/newbee-ltd/newbee-mall-vue3-app)<br/>[newbee-mall-vue3-app in Gitee](https://gitee.com/newbee-ltd/newbee-mall-vue3-app) | 前后端分离、Vue3、Vue-Router4、Vuex4、Vant3      |
+| vue3-admin           | [vue3-admin in GitHub](https://github.com/newbee-ltd/vue3-admin)<br/>[vue3-admin in Gitee](https://gitee.com/newbee-ltd/vue3-admin) | 前后端分离、Vue3、Element-Plus、Vue-Router4、Vite      |
 
-[//]: # (            <artifactId>spring-boot-maven-plugin</artifactId>)
+> 更多 Spring Boot 实战项目可以关注十三的另一个代码仓库 [spring-boot-projects](https://github.com/ZHENFENG13/spring-boot-projects)，该仓库中主要是 Spring Boot 的入门学习教程以及一些常用的 Spring Boot 实战项目教程，包括 Spring Boot 使用的各种示例代码，同时也包括一些实战项目的项目源码和效果展示，实战项目包括基本的 web 开发以及目前大家普遍使用的前后端分离实践项目等，后续会根据大家的反馈继续增加一些实战项目源码，摆脱各种 hello world 入门案例的束缚，真正的掌握 Spring Boot 开发。
 
-[//]: # (        </plugin>)
+关注公众号：**程序员十三**，回复"勾搭"进群交流。
 
-[//]: # (    </plugins>)
+![wx-gzh](https://newbee-mall.oss-cn-beijing.aliyuncs.com/wx-gzh/%E7%A8%8B%E5%BA%8F%E5%91%98%E5%8D%81%E4%B8%89-%E5%85%AC%E4%BC%97%E5%8F%B7.png)
 
-[//]: # (</build>)
-如果 pom.xml 文件中没有该 Maven 插件配置，是无法通过这种方式启动Spring Boot 项目的，这一点需要注意。
+## 开发及部署文档
 
-Maven插件启动 Spring Boot 项目的步骤如下：
+#### Vue3 + Spring Boot 版本
 
-首先点击下方工具栏中的 Terminal 打开命令行窗口，之后在命令行中输入命令 mvn spring-boot:run并执行该命令，即可启动 Spring Boot 项目，效果与之前介绍的启动方式一样。
+- [开篇词：通关 Vue3 企业级项目开发，升职加薪快人一步](https://juejin.cn/book/6933939264455442444)
+- [项目须知和课程约定](https://juejin.cn/book/6933939264455442444)
+- [大势所趋：“前后端分离”开发模式](https://juejin.cn/book/6933939264455442444)
+- [Vue3 简介及开发环境搭建](https://juejin.cn/book/6933939264455442444)
+- [Vue3 组合 API 入口 Setup 浅析](https://juejin.cn/book/6933939264455442444)
+- [Vue3 之响应式系统 API](https://juejin.cn/book/6933939264455442444)
+- [Vue3 之生命周期钩子函数、提供注入](https://juejin.cn/book/6933939264455442444)
+- [Vue3 性能和业务层面上的提升](https://juejin.cn/book/6933939264455442444)
+- [Vite2 原理分析及简单插件编写](https://juejin.cn/book/6933939264455442444)
+- [Vue-Router4 使用方法及路由原理](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战项目启动篇](https://juejin.cn/book/6933939264455442444)
+- [后端 API 开发技术选型之 Spring Boot](https://juejin.cn/book/6933939264455442444)
+- [后端基础运行环境和开发工具准备](https://juejin.cn/book/6933939264455442444)
+- [Spring Boot 项目搭建及快速上手](https://juejin.cn/book/6933939264455442444)
+- [Spring Boot 实践之 Web 功能开发](https://juejin.cn/book/6933939264455442444)
+- [Spring Boot 实践之文件上传处理](https://juejin.cn/book/6933939264455442444)
+- [Spring Boot 实践之整合 MyBatis 操作数据库](https://juejin.cn/book/6933939264455442444)
+- [Spring Boot 实践之整合 Lombok](https://juejin.cn/book/6933939264455442444)
+- [Spring Boot 实践之整合 Swagger 生成接口文档](https://juejin.cn/book/6933939264455442444)
+- [后端 API 项目启动和运行注意事项](https://juejin.cn/book/6933939264455442444)
+- [接口参数处理和统一响应结果](https://juejin.cn/book/6933939264455442444)
+- [API 接口开发实战之用户登录接口开发](https://juejin.cn/book/6933939264455442444)
+- [API 接口开发实战之用户身份认证详解](https://juejin.cn/book/6933939264455442444)
+- [API 接口开发实战之轮播图管理模块接口开发](https://juejin.cn/book/6933939264455442444)
+- [API 接口开发实战之商品分类管理模块接口开发](https://juejin.cn/book/6933939264455442444)
+- [API 接口开发实战之商品管理模块接口开发](https://juejin.cn/book/6933939264455442444)
+- [API 接口开发实战之商品配置管理模块接口开发](https://juejin.cn/book/6933939264455442444)
+- [API 接口开发实战之订单管理模块接口开发](https://juejin.cn/book/6933939264455442444)
+- [前后端鉴权的四种方式](https://juejin.cn/book/6933939264455442444)
+- [Vite2 + Vue3 + Element-plus 搭建管理后台项目](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战之管理后台左右栏目布局](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战之登录鉴权](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战之首页大盘数据](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战之首页配置](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战之分类管理](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战之商品管理](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战之订单管理](https://juejin.cn/book/6933939264455442444)
+- [Vue3 实战之会员管理、账户修改](https://juejin.cn/book/6933939264455442444)
+- [pm2 实现一键部署云端服务器](https://juejin.cn/book/6933939264455442444)
+- [常见问题汇总讲解](https://juejin.cn/book/6933939264455442444)
 
+#### Vue3 + Spring Boot 商城升级版本
 
-## a personal project for learning springboot by my self
-Project：表示将要初始化的 Spring Boot 项目类型，可以选择 Maven 构建或者 Gradle 构建，本项目将选择常用的 Maven 方式。
-Language：表示编程语言的选择，支持 Java 、Kotlin 和 Groovy。
-Spring Boot：表示将要初始化的 Spring Boot 项目所使用的 Spring Boot 版本，由于更新迭代较快，Spring Initializr 页面中会展示最新的几个 Spring Boot 版本号，之前的版本号虽然不会在这里展示，但是依然可以正常使用。
-Project Metada：表示项目的基础设置，包括项目包名的设置、打包方式、JDK 版本选择等等。
-Group：即 GroupID，表示项目组织的标识符，实际对应 Java 的包结构，是 main 目录里 Java 的目录结构。
-Artifact：即 ArtifactId，表示项目的标识符，实际对应项目的名称，也就是项目根目录的名称。
-Description：表示项目描述信息。
-Package name：表示项目包名。
-Packaging：表示项目的打包方式，有两种选择：Jar 和 War，在 Spring Boot 项目初始化时，如果选用的方式不同，那么导入的打包插件也有区别。
-Java：表示 JDK 版本的选择，有 15、11 和 8 三个版本供开发者选择。
-Dependencies：表示将要初始化的 Spring Boot 项目所需的依赖和 starter，如果不选择的话默认生成的项目中仅有核心模块 spring-boot-starter 和测试模块 spring-boot-starter-test。在这个配置项中可以设置项目中所需的 starter，比如 Web 开发所需的依赖，数据库开发所需的依赖等等。
+- [开篇词：手把手带你搭建Vue3+Spring Boot大型前后端分离项目](https://juejin.im/book/6844733826191589390)
+- [项目须知和课程约定](https://juejin.im/book/6844733826191589390)
+- [2023年2月小册全新优化升级](https://juejin.im/book/6844733826191589390)
+- [全栈开发！你必须要知道的“前后端分离”](https://juejin.im/book/6844733826191589390)
+- [前端模块化的发展历史](https://juejin.im/book/6844733826191589390)
+- [传统页面和单页面的权衡与抉择](https://juejin.im/book/6844733826191589390)
+- [准备工作及基础环境搭建（后端）](https://juejin.im/book/6844733826191589390)
+- [Spring Boot 项目初体验--项目搭建及启动](https://juejin.im/book/6844733826191589390)
+- [项目编码简化利器！Spring Boot 整合 Lombok](https://juejin.im/book/6844733826191589390)
+- [Lombok 插件问题处理](https://juejin.im/book/6844733826191589390)
+- [商城后端项目启动和运行注意事项](https://juejin.im/book/6844733826191589390)
+- [VSCode 的相关配置及插件介绍](https://juejin.im/book/6844733826191589390)
+- [基础篇：Vue 指令](https://juejin.im/book/6844733826191589390)
+- [Vue3 新特性介绍](https://juejin.im/book/6844733826191589390)
+- [基础篇: CSS 预处理工具Less的介绍及使用](https://juejin.im/book/6844733826191589390)
+- [脚手架工具 Vite](https://juejin.im/book/6844733826191589390)
+- [Vue-Router 浅析原理及使用](https://juejin.im/book/6844733826191589390)
+- [全局状态管理插件 Pinia 简介及使用](https://juejin.im/book/6844733826191589390)
+- [商城前端 H5 开发环境搭建及项目启动](https://juejin.im/book/6844733826191589390)
+- [前后端交互文档利器！Spring Boot 整合 Swagger](https://juejin.im/book/6844733826191589390)
+- [接口参数处理和统一响应结果](https://juejin.im/book/6844733826191589390)
+- [口设计规范及接口调用实践](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-用户登录接口开发](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-用户身份认证详解](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-首页模块接口开发](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-分类模块接口开发](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-商品搜索模块接口开发](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-购物车模块接口开发](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-个人信息及收货地址接口开发](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-下单流程接口开发](https://juejin.im/book/6844733826191589390)
+- [商城开发实战-订单处理流程详解](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-新蜂商城底部导航(抽离公共组件)](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-新蜂商城登录注册页(前端鉴权)](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-商城首页制作(轮播图、首页商品列表)](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-商品分类页面制作(better-scrol的介绍及使用)](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-商品列表页面制作(无限滚动加载)](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-商品详情页面制作(Pinia 购物车数量全局管理)](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-商城购物车页面制作(购物车页)](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-确认订单页面制作](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-地址栏管理页面制作](https://juejin.im/book/6844733826191589390)
+- [商城移动端开发实战-我的订单页面制作](https://juejin.im/book/6844733826191589390)
+- [常见问题汇总讲解](https://juejin.im/book/6844733826191589390)
 
-## MVC 自动配置内容
+## 联系作者
 
-文档地址为 [https://docs.spring.io/spring-boot/docs/2.3.7.RELEASE/reference/htmlsingle/#boot-features-spring-mvc-auto-configuration]
+> 大家有任何问题或者建议都可以在 [issues](https://github.com/newbee-ltd/newbee-mall/issues) 中反馈给我，我会慢慢完善这个项目。
 
-## MyBatis ![Mybatis.png](Mybatis.png)
+- 我的邮箱：2449207463@qq.com
+- QQ技术交流群：719099151 796794009
 
-封装了 JDBC 大部分操作，减少开发人员工作量；
-相比一些自动化的 ORM 框架，“半自动化”使得开发人员可以自由的编写 SQL 语句，灵活度更高；
-Java 代码与 SQL 语句分离，降低维护难度；
-自动映射结果集，减少重复的编码工作；
-开源社区十分活跃，文档齐全，学习成本不高。
+## 软件著作权
 
-建表示例：
-DROP TABLE IF EXISTS `tb_user`;
+>本系统已申请软件著作权，受国家版权局知识产权以及国家计算机软件著作权保护！
 
-CREATE TABLE `tb_user` (
-`id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-`name` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '登录名',
-`password` VARCHAR(100) NOT NULL DEFAULT '' COMMENT '密码',
-PRIMARY KEY (`id`)
-) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+![](https://newbee-mall.oss-cn-beijing.aliyuncs.com/poster/store/newbee-mall-copyright-02.png)
 
-/*Data for the table `jdbc_test` */
+## 接口文档
 
-insert  into `tb_user`(`id`,`name`,`password`) values (1,'Spring Boot','123456'),(2,'MyBatis','123456'),(3,'Thymeleaf','123456'),(4,'Java','123456'),(5,'MySQL','123456'),(6,'IDEA','123456');
+![](static-files/newbee-mall-api-swagger.png)
 
-![img.png](img.png)
+## 页面展示
 
+以下为新蜂商城 Vue 版本的页面预览：
 
-## Lombok
+- 登录页
 
-Lombok 项目是一个第三方的 Java 工具库，它会自动插入编辑器和构建工具中，Lombok提供了一组非常有用的注释，用来消除Java类中的大量样板代码，比如 setter getter 方法、构造方法等等，仅仅在原来的 JavaBean 类上使用 @Data 注解就可以替换数百行代码从而使代码变得更加清爽、简洁且易于维护。
+![](static-files/登录.png)
 
-Spring Boot 整合 Lombok:
+- 首页
 
-`
-<dependency>
-<groupId>org.projectlombok</groupId>
-<artifactId>lombok</artifactId>
-<version>1.18.8</version>
-<scope>provided</scope>
-</dependency>
-`
+![](static-files/首页.png)
 
-安装lombok插件
+- 商品搜索
 
-@Data 注解是一个比较霸道的注解，它不仅能够生成 POJO 类所有属性的 get() 和 set() 方法，此外还提供了equals、canEqual、hashCode、toString 方法。
+![](static-files/商品搜索.png)
 
-如果你不想要生成这么多内容，也可以使用其它的注解来实现你的需求：
+- 商品详情页
 
-@Setter 注解在属性上，为属性提供 setting 方法
-@Getter 注解在属性上，为属性提供 getting 方法
-@Log4j 注解在类上，为类提供一个 属性名为log 的 log4j 日志对象
-@NoArgsConstructor 注解在类上，为类提供一个无参的构造方法
-@AllArgsConstructor 注解在类上，为类提供一个全参的构造方法
-@Builder 被注解的类加个构造者模式
-@Synchronized 加同步锁
-@NonNull 如果给参数加个这个注解 参数为null会抛出空指针异常
-@Value 注解和 @Data 类似，区别在于它会把所有成员变量默认定义为 private final 修饰，并且不会生成set方法。
+![](static-files/详情页.png)
 
+- 购物车
 
+![](static-files/购物车.png)
 
+- 生成订单
+
+![](static-files/生成订单.png)
+
+- 地址管理
+
+![](static-files/地址管理.png)
+
+- 订单列表
+
+![](static-files/订单列表.png)
+
+- 订单详情
+
+![](static-files/订单详情.png)
+
+## 感谢
+
+- [spring-projects](https://github.com/spring-projects/spring-boot)
+- [mybatis](https://github.com/mybatis/mybatis-3)
+- [swagger](https://github.com/swagger-api)
+- [Lombok](https://github.com/rzwitserloot)
